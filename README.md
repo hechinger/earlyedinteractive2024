@@ -1,6 +1,6 @@
 READ ME: Try the code out in preview mode. But, Preview mode isn't always a guarantee. If it's not working once published, remove the code from the story. 
 
-TROUBLE SHOOT: Check for typos or missing symbols like < >. For example, it's important that there's a carrot before and after style so it's always <style>, and same goes for the script section at the end. Make sure nothing got cut off at the beginning or end: for example, the last thing in the code should be </script>. The </XXX> tells the code that a chunk is over.
+TROUBLE SHOOT: Check for typos or missing symbols like < >. For example, it's important that there's a carrot before and after style so it's always <style>, and same goes for the script section at the end. Make sure nothing got cut off at the beginning or end: for example, the last thing in the code should be </script>. The </  X  > tells the code that a chunk is over.
 
 If it's still not working... alert Marina or whoever knows coding on staff. 
 
