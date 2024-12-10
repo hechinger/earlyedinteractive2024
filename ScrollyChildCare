@@ -1,0 +1,106 @@
+
+//Code for the scrolly. If it's not working, remove the code from the story.
+
+<style>
+#scrolly1 {
+    position: relative;
+}
+
+.article {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 0px;
+}
+
+.articleInner {
+    max-width: 60%;
+    margin: auto;
+    line-height: 1.3em;
+}
+
+.sticky-thing1 {
+    position: sticky;
+    left: 0;
+    max-width: 100%;
+    top: 5vh;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 0;
+    opacity: 0.99;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.sticky-thing1 p {
+    font-size: 4rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.step {
+    margin: 0 auto 2rem auto;
+    margin-bottom: 35rem;
+    height: 60vh;
+    position: relative;
+    z-index: 999;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step p {
+    text-align: center;
+    color: black;
+    padding: 1rem;
+    font-size: 20px;
+    background-color: rgba(242, 242, 242, 1);
+}
+</style>
+
+<div id="mainScrolly">
+    <section id="scrolly1">
+        <div class="sticky-thing1"></div>
+        <article>
+            <div class="step" data-img="url('https://hechingerreport.org/wp-content/uploads/2024/12/df-file1.png')">
+                <p class="articleInner">Infants were "forced to drink bottles" and hit, thrown on the floor, kicked and yelled at when they became restless at one program, according to records. When one baby cried, a staff member muffled the noise by holding a bib over the infant's mouth and nose.</p>
+            </div>
+            <div class="step" data-img="url('https://hechingerreport.org/wp-content/uploads/2024/12/df-file2.png')">
+                <p class="articleInner">Other documents describe staff failing to comfort crying injured children, and letting young children play on unsafe gym equipment.</p>
+            </div>
+            <div class="step" data-img="url('https://hechingerreport.org/wp-content/uploads/2024/12/df-file3.png')">
+                <p class="articleInner">A staff member called children "pussies" when disciplining them, according to records.</p>
+            </div>
+            <div class="step" data-img="url('https://hechingerreport.org/wp-content/uploads/2024/12/df-file4.png')">
+                <p class="articleInner">At another program, records say two staff members placed a crying 23-month-old child in the bathroom for almost 1 hour and 20 minutes.</p>
+            </div>
+        </article>
+    </section>
+</div>
+
+<script src="https://unpkg.com/scrollama"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const scroller = scrollama();
+    const stickyElement = document.querySelector(".sticky-thing1");
+
+    scroller
+        .setup({
+            step: ".step",
+            offset: 0.4, // Adjusted offset to trigger earlier
+            debug: false,
+        })
+        .onStepEnter((response) => {
+            const stepElement = response.element;
+            const imgUrl = stepElement.getAttribute("data-img");
+            stickyElement.style.backgroundImage = imgUrl;
+        });
+
+    window.addEventListener("resize", scroller.resize);
+});
+</script>
